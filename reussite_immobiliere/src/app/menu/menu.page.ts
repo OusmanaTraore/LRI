@@ -55,10 +55,10 @@ export class MenuPage implements OnInit {
     console.log(`Ce mode est ${item}`);
      switch(item){
        case item="Admin":
-         this.route.navigateByUrl('admin');
+         this.route.navigateByUrl('login');
          break;
        case item="Membres":
-          this.route.navigateByUrl('membre');
+          this.route.navigateByUrl('login');
           break;
         case item="Public":
            this.route.navigateByUrl('public');

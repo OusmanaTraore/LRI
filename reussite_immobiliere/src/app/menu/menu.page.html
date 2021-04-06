@@ -1,69 +1,82 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button size="small" expand="block"  fill="outline" shape="round" >La Réussite Immobilière </ion-button>
+
+    <ion-button class="logo-text" size="small" expand="block" fill="outline" shape="round">La Réussite Immobilière
+    </ion-button>
+    <ion-button  class="home" routerLink='/home'  fill="outline" > 
+      <ion-icon name="home" ></ion-icon>
+    </ion-button>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content  >
-  <ion-segment color="primary" [(ngModel)]="type" (ionChange)="segmentChanged($event)" scrollable>
-    <ion-segment-button value="utilisateurs" checked>
-      <ion-label>Utilisateurs</ion-label>
-      <ion-icon name="people-circle-outline"></ion-icon>
-    </ion-segment-button>
-    <ion-segment-button value="contact">
-      <ion-label>Contact</ion-label>
-      <ion-icon name="person-outline"></ion-icon>
-    </ion-segment-button>
-    <ion-segment-button value="faq">
-      <ion-label>Faq</ion-label>
-      <ion-icon name="help"></ion-icon>
-    </ion-segment-button>
-    <ion-segment-button value="home" routerLink='/home'>
-      <ion-label>Home</ion-label>
-      <ion-icon name="home" ></ion-icon>
-    </ion-segment-button>
-  </ion-segment>
-
+<ion-content>
   <div [ngSwitch]="type">
     <ion-list class="utilisateurs" *ngSwitchCase="'utilisateurs'">
-      <ion-button *ngFor="let item of mode "
-      expand="full"  fill="outline" shape="round" 
-      (click)="Mode(item)" 
-         >
-          {{ item }}
-        </ion-button>
+
+      <ion-card align-self-center class="item item-text-wrap">
+        <ion-card-header>
+          <ion-item>
+            <ion-card-title size="large" class="header">
+              Accès Public
+            </ion-card-title>
+          </ion-item>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button color="tertiary" expand="full" shape="round" routerLink="/public">
+            Entrez!
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+      <ion-grid>
+        <ion-row>
+          <ion-col align-self-center>
+            <ion-button [routerLink]="['/inscription']" expand="block" color="primary">Devenir membre</ion-button>
+
+
+            <span style="text-align: center;">
+
+              <h4>ou</h4>
+            </span>
+
+
+            <ion-button [routerLink]="['/login']" expand="block" color="danger">Se connecter</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
     </ion-list>
     <ion-list class="contact" *ngSwitchCase="'contact'">
       <ion-card *ngFor="let item of admin ">
-        <ion-card-header >
+        <ion-card-header>
           <ion-item>
-            <ion-card-title> 
-              {{item.role}}  
+            <ion-card-title>
+              {{item.role}}
             </ion-card-title>
           </ion-item>
         </ion-card-header>
         <ion-item>
-            
-            <ion-button size="small" expand="block"  fill="outline" shape="round">
-              {{item.prenom}} &nbsp;
-              {{item.nom}} 
-              
-            </ion-button>
+
+          <ion-button size="small" expand="block" fill="outline" shape="round">
+            {{item.prenom}} &nbsp;
+            {{item.nom}}
+
+          </ion-button>
+        </ion-item>
+        <ion-card-content>
+          <ion-item>
+            <ion-icon name="mail"></ion-icon>
+            <ion-label>{{item.email}}</ion-label>
           </ion-item>
-          <ion-card-content>
-            <ion-item>
-              <ion-icon name="mail"></ion-icon>
-              <ion-label >{{item.email}}</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-icon name="call"></ion-icon>
-              <ion-label>{{item.telephone}}</ion-label>
-            </ion-item>
-          </ion-card-content>
-      
-        </ion-card>
+          <ion-item>
+            <ion-icon name="call"></ion-icon>
+            <ion-label>{{item.telephone}}</ion-label>
+          </ion-item>
+        </ion-card-content>
+
+      </ion-card>
     </ion-list>
-            <!-- 
+    <!-- 
 
          <ion-label>
            <h3>
@@ -75,7 +88,7 @@
           
         </h3>
       </ion-footer>  -->
-        <!-- <ion-item>
+    <!-- <ion-item>
           <ion-avatar slot="start">
             <img src="../../assets/slider/adrar.jpg">
           </ion-avatar>
@@ -93,28 +106,7 @@
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis mollis ligula sed ultrices.
         </ion-card-content>
       
-        <ion-footer>
-          <ion-row>
-            <ion-col center text-center>
-              <button>
-                <ion-icon name="thumbs-up"></ion-icon>
-                <div>1.5k Likes</div>
-              </button>
-            </ion-col>
-            <ion-col center text-center>
-              <button>
-                <ion-icon name="text"></ion-icon>
-                <div>4 Comments</div>
-              </button>
-            </ion-col>
-            <ion-col center text-center>
-              <button>
-                <ion-icon name="time"></ion-icon>
-                <div>11h ago</div>
-              </button>
-            </ion-col>
-          </ion-row>
-        </ion-footer> -->
+      -->
     <ion-list *ngSwitchCase="'faq'">
       <ion-item>
         <ion-thumbnail slot="start">
@@ -124,4 +116,21 @@
       </ion-item>
     </ion-list>
   </div>
-</ion-content>
+
+  <ion-footer>
+
+    <ion-segment color="primary" [(ngModel)]="type" (ionChange)="segmentChanged($event)" scrollable>
+      <ion-segment-button value="utilisateurs" checked>
+        <ion-label>Utilisateurs</ion-label>
+        <ion-icon name="people-circle-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="contact">
+        <ion-label>Contact</ion-label>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="faq">
+        <ion-label>Faq</ion-label>
+        <ion-icon name="help"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-footer>

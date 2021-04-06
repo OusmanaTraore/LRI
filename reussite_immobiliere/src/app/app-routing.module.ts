@@ -30,7 +30,19 @@ const routes: Routes = [
   {
     path: 'public',
     loadChildren: () => import('./public/public.module').then( m => m.PublicPageModule)
+  },  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'inscription',
+    loadChildren: () => import('./inscription/inscription.module').then( m => m.InscriptionPageModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  },
+
 ];
 
 @NgModule({

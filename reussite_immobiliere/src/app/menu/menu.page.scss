@@ -1,17 +1,21 @@
 body{
     background-color:#f5f5f3;
 }
-ion-header{
-    ion-toolbar{
-        ion-button{
-            
-            position:fixed;
-            left: 75px;
-            top: 10px;
-            right: 75px;
-            
-    }
+.logo-text{
+    position:fixed;
+    left: 75px;
+    top: 10px;
+    right: 75px;
+    
 }
+
+.home{
+float: right;
+right: 15px;
+left: 15px;
+top: 20px;
+bottom: 40px;
+margin-right: 10px;
 }
 
 ion-content{
@@ -30,13 +34,24 @@ ion-content{
         }
     }
   
+    .header{
+text-align: center;
+margin-right: 10px;
+margin-left: 10px;
+    }
+ion-grid{
+    margin-top: 50px;
+}
+ion-card{
+    width: 100% ;
+}
     div{
         .utilisateurs{
         background-color:#f5f5f3;
         margin:25px;
         position:fixed;
         left: 45px;
-        top: 250px;
+        top: 70px;
         right: 45px;
           ion-button{
               margin: 15px;

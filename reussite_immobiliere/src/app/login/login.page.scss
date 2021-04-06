@@ -1,0 +1,44 @@
+ion-icon{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  .connexion-text{
+      margin-bottom: 25px;
+      margin-top: 100px;
+  }
+  .connexion{
+      margin-bottom: 25px;
+      margin-top: 20px;
+  }
+  .retour{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    
+}
+  body{
+      background-color:#f5f5f3;
+  }
+  
+  .logo-text{
+              position:fixed;
+              left: 75px;
+              top: 10px;
+              right: 75px;
+              
+      }
+  
+      .home{
+        float: right;
+        right: 25px;
+        left: 25px;
+        top: 20px;
+        bottom: 40px;
+        margin-right: 10px;
+        margin-left: 20px;
+        }
+  
+  ion-content{
+      --background:#f5f5f3;
+      }
